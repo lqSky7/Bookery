@@ -13,8 +13,14 @@ struct ContentView: View {
         NavigationStack{
             VStack{
                 TextEditor(text: $notes)
-                    .safeAreaPadding()
+                TextField("notes", text: $notes, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
+                
+                TextField("notes2", text: $notes, axis: .horizontal)
+                    .textFieldStyle(.roundedBorder)
+                
             }
+            .safeAreaPadding()
             .navigationTitle("simple notes")
         }
     }
